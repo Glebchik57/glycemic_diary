@@ -20,7 +20,9 @@ class Note(models.Model):
         validators=[MinValueValidator(0.0), MaxValueValidator(50.0)]
     )
     insulin_injection_count = models.FloatField(
-        validators=[MinValueValidator(0.0), MaxValueValidator(100.0)]
+        validators=[MinValueValidator(0.0), MaxValueValidator(100.0)],
+        null=True,
+        blank=True
     )
     diary = models.ForeignKey(
         Diary,
