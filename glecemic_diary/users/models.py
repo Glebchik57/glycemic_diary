@@ -2,6 +2,8 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import UserManager
 from django.db import models
 
+from diary.models import Diary
+
 
 class BaseUser(AbstractBaseUser):
     name = models.CharField(max_length=40)
@@ -31,6 +33,10 @@ class Patient(BaseUser):
         blank=True,
         verbose_name='Гости'
     )
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        Diary.objects.create(patient=self)
 
 
 class Guest(BaseUser):
