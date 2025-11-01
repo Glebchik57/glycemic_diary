@@ -6,7 +6,8 @@ class Diary(models.Model):
     patient = models.OneToOneField(
         'users.Patient',
         on_delete=models.CASCADE,
-        related_name='diary'
+        related_name='diary',
+        unique=True
     )
     date = models.DateTimeField(auto_now_add=True)
 
