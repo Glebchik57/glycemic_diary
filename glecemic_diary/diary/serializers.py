@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models import Diary, Note
+from .models import Diary, Note
 
 
 class NoteSerializer(serializers.ModelSerializer):

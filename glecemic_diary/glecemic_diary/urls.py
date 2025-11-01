@@ -2,14 +2,14 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from glecemic_diary.diary.views import DiaryViewSet, NoteViewSet
-from glecemic_diary.users.views import PatientViewSet, GuestViewSet
+from diary.views import DiaryViewSet, NoteViewSet
+from users.views import PatientViewSet, GuestViewSet
 
 router = DefaultRouter()
-router.registry('patients', PatientViewSet)
-router.registry('guests', GuestViewSet)
-router.registry('diary', DiaryViewSet)
-router.registry('notes', NoteViewSet)
+router.register('patients', PatientViewSet)
+router.register('guests', GuestViewSet)
+router.register('diary', DiaryViewSet)
+router.register('notes', NoteViewSet)
 
 
 urlpatterns = [

@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 
-from glecemic_diary.diary.models import Diary, Note
-from glecemic_diary.diary.serializers import DiarySerializer, NoteSerializer
+from .models import Diary, Note
+from .serializers import DiarySerializer, NoteSerializer
 
 
 class DiaryViewSet(viewsets.ModelViewSet):

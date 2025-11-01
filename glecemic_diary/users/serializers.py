@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
-from glecemic_diary.diary.serializers import DiarySerializer
-from glecemic_diary.users.models import Patient, Guest
+from diary.serializers import DiarySerializer
+from .models import Patient, Guest
 
 
 class GuestSerializer(serializers.ModelSerializer):
@@ -25,5 +25,6 @@ class PatientSerializer(serializers.ModelSerializer):
             'surname',
             'email',
             'insulin',
-            'diary'
+            'diary',
+            'guests'
         )
